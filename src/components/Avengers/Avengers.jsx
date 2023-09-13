@@ -4,7 +4,7 @@ import { useState } from "react";
 import Avenger from "./Avenger/Avenger";
 
 
-const Avengers = ({ handleAddToBookmarks }) => {
+const Avengers = ({ handleAddToBookmarks, handleAddTotalSalary }) => {
 
     const [avengers, setAvengers] = useState([])
 
@@ -21,7 +21,7 @@ const Avengers = ({ handleAddToBookmarks }) => {
 
             <div className="grid grid-cols-2">
                 {
-                    avengers.map(avenger => <Avenger key={avenger.id} avenger={avenger} handleAddToBookmarks={handleAddToBookmarks} ></Avenger>)
+                    avengers.map(avenger => <Avenger key={avenger.id} avenger={avenger} handleAddToBookmarks={handleAddToBookmarks} handleAddTotalSalary={handleAddTotalSalary} ></Avenger>)
                 }
             </div>
         </div>
@@ -29,7 +29,9 @@ const Avengers = ({ handleAddToBookmarks }) => {
 };
 
 Avengers.propTypes = {
-    handleAddToBookmarks: PropTypes.func.isRequired
+    handleAddToBookmarks: PropTypes.func.isRequired,
+    handleAddTotalSalary: PropTypes.func.isRequired
 }
+
 
 export default Avengers;
